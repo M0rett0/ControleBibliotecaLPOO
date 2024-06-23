@@ -269,6 +269,9 @@ class Biblioteca {
     }
 
     public void emprestarLivro(Livro livro) {
+        // Se o livro a ser emprestado existe no ArrayList livros
+        //  e o livro ainda não foi adicionado ao ArrayList emprestados,
+        //  então adicione o livro no ArrayList emprestados.
         if (this.livros.contains(livro)) {
             if (!this.emprestados.contains(livro)) {
                 this.emprestados.add(livro);
@@ -277,26 +280,19 @@ class Biblioteca {
                 System.out.println("Livro já está emprestado!\n");
             }
         } else {
-            System.out.println("Livro não encontrado na biblioteca.");
-            System.out.println();
+            System.out.println("Livro não encontrado na biblioteca.\n");
         }
-        // Se o livro a ser emprestado existe no ArrayList livros
-        //  e o livro ainda não foi adicionado ao ArrayList emprestados,
-        //  então adicione o livro no ArrayList emprestados.
     }
 
     public void devolverLivro(Livro livro) {
-
-        if (this.emprestados.contains(livro)) {
-            emprestados.remove(livro);
-            System.out.println("Livro devolvido com sucesso!");
-            System.out.println();
-        } else {
-            System.out.println("Livro não foi emprestado, portanto não pode ser devolvido.");
-            System.out.println();
-        }
         // Se o livro a ser devolvido existe no ArrayList emprestados,
         //  então remova o livro do ArrayList emprestados.
+        if (this.emprestados.contains(livro)) {
+            emprestados.remove(livro);
+            System.out.println("Livro devolvido com sucesso!\n");
+        } else {
+            System.out.println("Livro não foi emprestado, portanto não pode ser devolvido.\n");
+        }
     }
 
     public void imprimirLivros() {
@@ -332,6 +328,7 @@ class Orcamento implements Compra {
 
     private ArrayList<Livro> pedido;
 
+    // metodo construtor Orçamento
     public Orcamento() {
         this.pedido = new ArrayList<>();
     }
@@ -347,18 +344,17 @@ class Orcamento implements Compra {
         for (Livro livro : pedido) {
             precoTotal += livro.getPreco();
         }
-
         return precoTotal;
     }
 
     public void listarPedidos() {
+        // Lista todos os livros do Pedido e imprime o valor 
         System.out.println("Lista de livros no pedido:");
         for(Livro livro : pedido) {
             System.out.println(livro);
         }
+        // total do pedido com a chamada do método calcularPreco().
         System.out.println("Preco total do pedido: "+ calcularPreco());
         System.out.println();
-        // Lista todos os livros do Pedido e imprime o valor 
-        // total do pedido com a chamada do método calcularPreco().
     }
 }
