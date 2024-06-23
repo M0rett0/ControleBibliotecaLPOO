@@ -8,8 +8,8 @@ import java.util.Comparator;
 
 public class Main {
     public static void main(String[] args) {
-
         Scanner scanner = new Scanner(System.in);
+        
         //leitura e print de AUtores ta certo kkkk
         System.out.println("Digite o nome do autor:");
         String nomeAutor = scanner.nextLine();
@@ -91,13 +91,13 @@ public class Main {
         //System.out.println(livro);
         //System.out.println(ebook);
 
-        //funcoes q a prof pediu
+        //Listando todos os livros da biblioteca + os emprestados
         biblio.imprimirLivros();
         
-        //listando todos os pedidos
+        //Listando lista de pedido + preço total final
         pedido.listarPedidos();
 
-
+        //Fim do uso do Scanner
         scanner.close();
     }
         // usar laco for pros inputs da silva
@@ -313,7 +313,7 @@ class Biblioteca {
             System.out.println("Não há livros emprestados!");
             System.out.println();
         } else {
-            System.out.println("Livros já emprestados:");
+            System.out.println("Livros emprestados:");
             for (Livro livro : emprestados) {
                 System.out.println(livro);
             }
@@ -349,7 +349,7 @@ class Orcamento implements Compra {
 
     public void listarPedidos() {
         // Lista todos os livros do Pedido e imprime o valor 
-        System.out.println("Lista de livros no pedido:");
+        System.out.println("Lista de pedido de livros:");
         for(Livro livro : pedido) {
             System.out.println(livro);
         }
