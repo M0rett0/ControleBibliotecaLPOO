@@ -7,7 +7,6 @@ import java.util.Collections;
 import java.util.Comparator;
 
 public class Main {
-    //vamo fgazer essa porra desse trabalho
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
@@ -204,6 +203,7 @@ class LivroFisico extends Livro {
 
     private double preco;
 
+    // metodo construtor de LivroFisico
     public LivroFisico(String titulo, String isbn, double preco) {
         super(titulo, isbn);
         this.preco = preco;
@@ -211,7 +211,7 @@ class LivroFisico extends Livro {
         this.isbn = isbn;
     }
 
-    public double getPreco() {
+    protected double getPreco() {
         return this.preco;
     }
 
@@ -230,6 +230,7 @@ class Ebook extends Livro {
 
     private double preco;
 
+    // metodo construtor de Ebook
     public Ebook(String titulo, String isbn, double preco) {
         super(titulo, isbn);
         this.preco = preco;
@@ -237,7 +238,7 @@ class Ebook extends Livro {
         this.isbn = isbn;
     }
 
-    public double getPreco() {
+    protected double getPreco() {
         return this.preco;
     }
 
@@ -256,6 +257,7 @@ class Biblioteca {
     private ArrayList<Livro> livros;
     private ArrayList<Livro> emprestados;
 
+    // metodo construtor Biblioteca
     public Biblioteca() {
         this.livros = new ArrayList<>();
         this.emprestados = new ArrayList<>();
@@ -270,11 +272,9 @@ class Biblioteca {
         if (this.livros.contains(livro)) {
             if (!this.emprestados.contains(livro)) {
                 this.emprestados.add(livro);
-                System.out.println("Livro emprestado com sucesso!");
-                System.out.println();
+                System.out.println("Livro emprestado com sucesso!\n");
             } else {
-                System.out.println("Livro já está emprestado!");
-                System.out.println();
+                System.out.println("Livro já está emprestado!\n");
             }
         } else {
             System.out.println("Livro não encontrado na biblioteca.");
