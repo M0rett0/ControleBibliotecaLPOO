@@ -326,7 +326,7 @@ class Biblioteca { // iniciando classe Biblioteca
         if (this.livros.contains(livro)) {
             if (!this.emprestados.contains(livro)) {
                 this.emprestados.add(livro);
-                System.out.println("Livro emprestado com sucesso!\n");
+                System.out.println("Livro "+livro.titulo+" emprestado com sucesso!\n");
             } else {
                 System.out.println("Livro já está emprestado!\n");
             }
@@ -340,7 +340,7 @@ class Biblioteca { // iniciando classe Biblioteca
         //  então remova o livro do ArrayList emprestados.
         if (this.emprestados.contains(livro)) {
             emprestados.remove(livro);
-            System.out.println("Livro devolvido com sucesso!\n");
+            System.out.println("Livro "+livro.titulo+" devolvido com sucesso!\n");
         } else {
             System.out.println("Livro não foi emprestado, portanto não pode ser devolvido.\n");
         }
