@@ -21,18 +21,20 @@ public class Main {
         String instituicaoAutor = scanner.nextLine();
         System.out.println();
 
-        Autor autor = new Autor("Colleen Hoover", emailAutor, instituicaoAutor);
-        Autor autor2 = new Autor("Agatha Christie", emailAutor, instituicaoAutor);
-        Autor autor3 = new Autor("Dan Brown", emailAutor, instituicaoAutor);
-        Autor autor4 = new Autor("Stephen King", emailAutor, instituicaoAutor);
-        Autor autor5 = new Autor("John Green", emailAutor, instituicaoAutor);
-        Autor autor6 = new Autor("Ali Hazelwood", emailAutor, instituicaoAutor);
-        Autor autor7 = new Autor("Emily Henry", emailAutor, instituicaoAutor);
-        Autor autor8 = new Autor("Julia Quinn", emailAutor, instituicaoAutor);
-        Autor autor9 = new Autor("Kiera Cass", emailAutor, instituicaoAutor);
-        Autor autor10 = new Autor("Matt Haig", emailAutor, instituicaoAutor);
-        Autor autor11 = new Autor("Daniel Kahneman", emailAutor, instituicaoAutor);
-        Autor autor12 = new Autor("Rachel Renée Russell", emailAutor, instituicaoAutor);
+
+        Autor autorTeste = new Autor(nomeAutor, emailAutor, instituicaoAutor);
+        Autor autor = new Autor("Colleen Hoover", "Coolen@email.com", instituicaoAutor);
+        Autor autor2 = new Autor("Agatha Christie", "Agatha.C@email.com", instituicaoAutor);
+        Autor autor3 = new Autor("Dan Brown", "D.Brown@email.com", instituicaoAutor);
+        Autor autor4 = new Autor("Stephen King", "SKWriter@email.com", instituicaoAutor);
+        Autor autor5 = new Autor("John Green", "John_green@email.com", instituicaoAutor);
+        Autor autor6 = new Autor("Ali Hazelwood", "Hazel.Ali@email.com", instituicaoAutor);
+        Autor autor7 = new Autor("Emily Henry", "H.Emily@email.com", instituicaoAutor);
+        Autor autor8 = new Autor("Julia Quinn", "Juju.Quinn@email.com", instituicaoAutor);
+        Autor autor9 = new Autor("Kiera Cass", "K.Kiera@email.com", instituicaoAutor);
+        Autor autor10 = new Autor("Matt Haig", "Haig_M@email.com", instituicaoAutor);
+        Autor autor11 = new Autor("Daniel Kahneman", "Kah_Dan@email.com", instituicaoAutor);
+        Autor autor12 = new Autor("Rachel Renée Russell", "RachelRR@email.com", instituicaoAutor);
         
         //leitura do livro fisico
         System.out.println("Digite o título do livro:");
@@ -155,15 +157,15 @@ public class Main {
         pedido1.adicionarLivro(livro4);
         pedido1.adicionarLivro(livro2);
         pedido1.adicionarLivro(livro3);
-        pedido1.adicionarLivro(livro1);
+        pedido1.adicionarLivro(livro);
 
         pedido2.adicionarLivro(ebook2);
         pedido2.adicionarLivro(ebook5);
         pedido2.adicionarLivro(ebook6);
 
-        pedido3.adicionarLivro(livro1);
+        pedido3.adicionarLivro(livro);
         pedido3.adicionarLivro(livro3);
-        pedido3.adicionarLivro(ebook1);
+        pedido3.adicionarLivro(ebook);
         pedido3.adicionarLivro(ebook3);
         pedido3.adicionarLivro(livro);
         pedido3.adicionarLivro(ebook);
@@ -171,7 +173,7 @@ public class Main {
         //Fim do uso do Scanner
         scanner.close();
     }
-        // usar laco for pros inputs da silva
+        
         // 12 autores
         // 6 livros
         // 6 ebooks
@@ -257,7 +259,7 @@ abstract class Livro implements Comparable<Object> {
         this.autores.add(autor);
     }
 
-    public abstract double getPreco();
+    protected abstract double getPreco();
 
     @Override
     public int compareTo(Livro outroLivro) {
