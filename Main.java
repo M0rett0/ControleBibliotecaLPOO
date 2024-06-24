@@ -11,7 +11,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         
         //leitura e print de AUtores ta certo kkkk
-        System.out.println("Digite o nome do autor:");
+        System.out.println("Digite o nome do autor que deseja adicionar:");
         String nomeAutor = scanner.nextLine();
 
         System.out.println("Digite o email do autor:");
@@ -20,7 +20,6 @@ public class Main {
         System.out.println("Digite a instituição do autor:");
         String instituicaoAutor = scanner.nextLine();
         System.out.println();
-
 
         Autor autorTeste = new Autor(nomeAutor, emailAutor, instituicaoAutor);
         Autor autor = new Autor("Colleen Hoover", "Coolen@email.com", "Instituicao Autor 1");
@@ -35,10 +34,12 @@ public class Main {
         Autor autor10 = new Autor("Matt Haig", "Haig_M@email.com", "Instituicao Autor 10");
         Autor autor11 = new Autor("Daniel Kahneman", "Kah_Dan@email.com", "Instituicao Autor 11");
         Autor autor12 = new Autor("Rachel Renée Russell", "RachelRR@email.com", "Instituicao Autor 12");
-        
+       
+        System.out.println("==========INDICE INICIAL==========");
+
         //leitura do livro fisico
-        System.out.println("Digite o título do livro:");
-        String tituloLivro = scanner.nextLine();
+        System.out.println("Digite o título do livro que deseja emprestar:");
+        String titulolivro = scanner.nextLine();
 
         System.out.println("Digite o ISBN do livro:");
         String isbnLivro = scanner.nextLine();
@@ -58,7 +59,7 @@ public class Main {
                 scanner.nextLine(); // Consumir a entrada inválida
             }
         }
-
+        LivroFisico livroteste = new LivroFisico(titulolivro, isbnLivro, precoLivro);
         LivroFisico livro = new LivroFisico("Diário de uma garota nada popular", "442568", 60);
         LivroFisico livro2 = new LivroFisico("Diário de um banana" , "0098765", 65);
         LivroFisico livro3 = new LivroFisico("O mistério do capiongo" , "5552627", 30.98);
@@ -69,7 +70,7 @@ public class Main {
 
 
         // Leitura dos dados do ebook
-        System.out.println("Digite o título do ebook:");
+        System.out.println("Digite o título do ebook que deseja emprestar:");
         String tituloEbook = scanner.nextLine();
 
         System.out.println("Digite o ISBN do ebook:");
@@ -88,24 +89,18 @@ public class Main {
             }
         }
 
+        Ebook ebookteste = new Ebook(tituloEbook, isbnEbook, precoLivro);
         Ebook ebook = new Ebook("Quente como o inferno", "973244343", 15.01);
         Ebook ebook2 = new Ebook("A luz por trás da escuridão", "44326561", 25);
         Ebook ebook3 = new Ebook("Croissant de chocolate", "55552323", 31.20);
         Ebook ebook4 = new Ebook("Aurora e o fim de tarde", "71736512", 29.99);
         Ebook ebook5 = new Ebook("The Crown", "009712", 19.98);
         Ebook ebook6 = new Ebook("Pecados capitais", "127847343", 16.87);
-        System.out.println();
-
-
-
-        Orcamento pedido = new Orcamento();
-        pedido.adicionarLivro(livro);
-        pedido.adicionarLivro(ebook);
-
-        
+        System.out.println(); 
 
         //criando objeto biblioteca
         Biblioteca biblio = new Biblioteca();
+        biblio.adicionarLivro(livroteste);
         biblio.adicionarLivro(livro);
         biblio.adicionarLivro(livro2);
         biblio.adicionarLivro(livro3);
@@ -113,6 +108,7 @@ public class Main {
         biblio.adicionarLivro(livro5);
         biblio.adicionarLivro(livro6);
 
+        biblio.adicionarLivro(ebookteste);
         biblio.adicionarLivro(ebook);
         biblio.adicionarLivro(ebook2);
         biblio.adicionarLivro(ebook3);
@@ -120,36 +116,17 @@ public class Main {
         biblio.adicionarLivro(ebook5);
         biblio.adicionarLivro(ebook6);
 
-        biblio.emprestarLivro(ebook);
-        biblio.emprestarLivro(ebook2);
-        biblio.emprestarLivro(ebook3);
-        biblio.emprestarLivro(ebook4);
-        biblio.emprestarLivro(ebook5);
-        biblio.emprestarLivro(ebook6);
 
-        biblio.emprestarLivro(livro);
-        biblio.emprestarLivro(livro2);
-        biblio.emprestarLivro(livro3);
-        biblio.emprestarLivro(livro4);
-        biblio.emprestarLivro(livro5);
-        biblio.emprestarLivro(livro6);
+        //emprestando livro digitado pelo usuario
+        biblio.emprestarLivro(livroteste);
 
-        biblio.devolverLivro(ebook);
-        biblio.devolverLivro(ebook2);
-        biblio.devolverLivro(ebook3);
-        biblio.devolverLivro(ebook4);
-        biblio.devolverLivro(ebook5);
-        biblio.devolverLivro(ebook6);
-
-        //System.out.println(autor);
-        //System.out.println(livro);
-        //System.out.println(ebook);
+        //emprestando ebook digitado pelo usuario
+        biblio.emprestarLivro(ebookteste);
 
         //Listando todos os livros da biblioteca + os emprestados
         biblio.imprimirLivros();
         
-        //Listando lista de pedido + preço total final
-        pedido.listarPedidos();
+        //Fazendo 3 pedidos de orçamento diferentes
         Orcamento pedido1 = new Orcamento();
         Orcamento pedido2 = new Orcamento();
         Orcamento pedido3 = new Orcamento();
@@ -158,10 +135,14 @@ public class Main {
         pedido1.adicionarLivro(livro2);
         pedido1.adicionarLivro(livro3);
         pedido1.adicionarLivro(livro);
+        pedido1.listarPedidos();
+        System.out.println("Fim de pedido 1\n");
 
         pedido2.adicionarLivro(ebook2);
         pedido2.adicionarLivro(ebook5);
         pedido2.adicionarLivro(ebook6);
+        pedido2.listarPedidos();
+        System.out.println("Fim de pedido 2\n");
 
         pedido3.adicionarLivro(livro);
         pedido3.adicionarLivro(livro3);
@@ -169,15 +150,12 @@ public class Main {
         pedido3.adicionarLivro(ebook3);
         pedido3.adicionarLivro(livro);
         pedido3.adicionarLivro(ebook);
+        pedido3.listarPedidos();
+        System.out.println("Fim de pedido 3\n");
 
         //Fim do uso do Scanner
         scanner.close();
     }
-        
-        // 12 autores
-        // 6 livros
-        // 6 ebooks
-        // 3 pedidos de compras
 
 }
 
@@ -190,7 +168,7 @@ interface Compra { // declarando interface Compra
     double calcularPreco();
 }
 
-class Autor implements Valida {
+class Autor implements Valida { //iniciando classe Autor implrementando a interface Valida
 
     Scanner scanner = new Scanner(System.in);
 
@@ -212,12 +190,12 @@ class Autor implements Valida {
         if (validarEmail(email)) {
             this.email = email;
         } else {
-            System.out.println("Email inválido. Por favor, forneça um novo email:");
+            System.out.println("Email inválido. Por favor, forneça um novo email:\n");
             String novoEmail = scanner.next();
 
             // Loop para solicitar um novo email até que seja válido
             while (!validarEmail(novoEmail)) {
-                System.out.println("Email inválido. Por favor, forneça um novo email:");
+                System.out.println("Email inválido. Por favor, forneça um novo email:\n");
                 novoEmail = scanner.next();
             }
 
@@ -240,7 +218,7 @@ class Autor implements Valida {
     }
 }
 
-abstract class Livro implements Comparable<Object> {
+abstract class Livro implements Comparable<Object> { //iniciando classe abstrata Livro
 
     //declarando os atributos de Livro
     protected String titulo;
@@ -272,7 +250,7 @@ abstract class Livro implements Comparable<Object> {
 
 }
 
-class LivroFisico extends Livro {
+class LivroFisico extends Livro { // iniciando classe LivroFisico que extende a classe Livro
 
     private double preco;
 
@@ -299,7 +277,7 @@ class LivroFisico extends Livro {
     }
 }
 
-class Ebook extends Livro {
+class Ebook extends Livro { // iniciando classe Ebook que extende a classe Livro
 
     private double preco;
 
@@ -326,7 +304,7 @@ class Ebook extends Livro {
     }
 }
 
-class Biblioteca {
+class Biblioteca { // iniciando classe Biblioteca
     private ArrayList<Livro> livros;
     private ArrayList<Livro> emprestados;
 
@@ -376,7 +354,7 @@ class Biblioteca {
         if (livros.isEmpty()) {
             System.out.println("Não há livros disponíveis.");
         } else {
-            System.out.println("Livros disponiveis na biblioteca:");
+            System.out.println("=========LIVROS DISPONIVEIS=========");
             for (Livro livro : livros) {
                 System.out.println(livro);
             }
@@ -386,7 +364,7 @@ class Biblioteca {
             System.out.println("Não há livros emprestados!");
             System.out.println();
         } else {
-            System.out.println("Livros emprestados:");
+            System.out.println("=========LIVROS EMPRESTADOS=========");
             for (Livro livro : emprestados) {
                 System.out.println(livro);
             }
@@ -397,7 +375,7 @@ class Biblioteca {
 
 }
 
-class Orcamento implements Compra {
+class Orcamento implements Compra { //iniciando classe Orcamento
 
     private ArrayList<Livro> pedido;
 
@@ -422,7 +400,7 @@ class Orcamento implements Compra {
 
     public void listarPedidos() {
         // Lista todos os livros do Pedido e imprime o valor 
-        System.out.println("Lista de pedido de livros:");
+        System.out.println("=========LISTA DE PEDIDO=========");
         for(Livro livro : pedido) {
             System.out.println(livro);
         }
