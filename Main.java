@@ -21,7 +21,18 @@ public class Main {
         String instituicaoAutor = scanner.nextLine();
         System.out.println();
 
-        Autor autor = new Autor(nomeAutor, emailAutor, instituicaoAutor);
+        Autor autor = new Autor("Colleen Hoover", emailAutor, instituicaoAutor);
+        Autor autor2 = new Autor("Agatha Christie", emailAutor, instituicaoAutor);
+        Autor autor3 = new Autor("Dan Brown", emailAutor, instituicaoAutor);
+        Autor autor4 = new Autor("Stephen King", emailAutor, instituicaoAutor);
+        Autor autor5 = new Autor("John Green", emailAutor, instituicaoAutor);
+        Autor autor6 = new Autor("Ali Hazelwood", emailAutor, instituicaoAutor);
+        Autor autor7 = new Autor("Emily Henry", emailAutor, instituicaoAutor);
+        Autor autor8 = new Autor("Julia Quinn", emailAutor, instituicaoAutor);
+        Autor autor9 = new Autor("Kiera Cass", emailAutor, instituicaoAutor);
+        Autor autor10 = new Autor("Matt Haig", emailAutor, instituicaoAutor);
+        Autor autor11 = new Autor("Daniel Kahneman", emailAutor, instituicaoAutor);
+        Autor autor12 = new Autor("Rachel Renée Russell", emailAutor, instituicaoAutor);
         
         //leitura do livro fisico
         System.out.println("Digite o título do livro:");
@@ -46,7 +57,12 @@ public class Main {
             }
         }
 
-        LivroFisico livro = new LivroFisico(tituloLivro, isbnLivro, precoLivro);
+        LivroFisico livro = new LivroFisico("Diário de uma garota nada popular", "442568", 60);
+        LivroFisico livro2 = new LivroFisico("Diário de um banana" , "0098765", 65);
+        LivroFisico livro3 = new LivroFisico("O mistério do capiongo" , "5552627", 30.98);
+        LivroFisico livro4 = new LivroFisico("Rápido e devagar" , "5421599", 40.44);
+        LivroFisico livro5 = new LivroFisico("Capitães de areia" , "00021333", 65);
+        LivroFisico livro6 = new LivroFisico("O diário de Anne Frank" , "0098765", 23.05);
         System.out.println();
 
 
@@ -70,8 +86,15 @@ public class Main {
             }
         }
 
-        Ebook ebook = new Ebook(tituloEbook, isbnEbook, precoLivro);
+        Ebook ebook = new Ebook("Quente como o inferno", "973244343", 15.01);
+        Ebook ebook2 = new Ebook("A luz por trás da escuridão", "44326561", 25);
+        Ebook ebook3 = new Ebook("Croissant de chocolate", "55552323", 31.20);
+        Ebook ebook4 = new Ebook("Aurora e o fim de tarde", "71736512", 29.99);
+        Ebook ebook5 = new Ebook("The Crown", "009712", 19.98);
+        Ebook ebook6 = new Ebook("Pecados capitais", "127847343", 16.87);
         System.out.println();
+
+
 
         Orcamento pedido = new Orcamento();
         pedido.adicionarLivro(livro);
@@ -82,10 +105,39 @@ public class Main {
         //criando objeto biblioteca
         Biblioteca biblio = new Biblioteca();
         biblio.adicionarLivro(livro);
+        biblio.adicionarLivro(livro2);
+        biblio.adicionarLivro(livro3);
+        biblio.adicionarLivro(livro4);
+        biblio.adicionarLivro(livro5);
+        biblio.adicionarLivro(livro6);
+
         biblio.adicionarLivro(ebook);
+        biblio.adicionarLivro(ebook2);
+        biblio.adicionarLivro(ebook3);
+        biblio.adicionarLivro(ebook4);
+        biblio.adicionarLivro(ebook5);
+        biblio.adicionarLivro(ebook6);
+
         biblio.emprestarLivro(ebook);
+        biblio.emprestarLivro(ebook2);
+        biblio.emprestarLivro(ebook3);
+        biblio.emprestarLivro(ebook4);
+        biblio.emprestarLivro(ebook5);
+        biblio.emprestarLivro(ebook6);
+
         biblio.emprestarLivro(livro);
+        biblio.emprestarLivro(livro2);
+        biblio.emprestarLivro(livro3);
+        biblio.emprestarLivro(livro4);
+        biblio.emprestarLivro(livro5);
+        biblio.emprestarLivro(livro6);
+
         biblio.devolverLivro(ebook);
+        biblio.devolverLivro(ebook2);
+        biblio.devolverLivro(ebook3);
+        biblio.devolverLivro(ebook4);
+        biblio.devolverLivro(ebook5);
+        biblio.devolverLivro(ebook6);
 
         //System.out.println(autor);
         //System.out.println(livro);
