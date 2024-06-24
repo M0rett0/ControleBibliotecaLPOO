@@ -148,6 +148,25 @@ public class Main {
         
         //Listando lista de pedido + preço total final
         pedido.listarPedidos();
+        Orcamento pedido1 = new Orcamento();
+        Orcamento pedido2 = new Orcamento();
+        Orcamento pedido3 = new Orcamento();
+
+        pedido1.adicionarLivro(livro4);
+        pedido1.adicionarLivro(livro2);
+        pedido1.adicionarLivro(livro3);
+        pedido1.adicionarLivro(livro1);
+
+        pedido2.adicionarLivro(ebook2);
+        pedido2.adicionarLivro(ebook5);
+        pedido2.adicionarLivro(ebook6);
+
+        pedido3.adicionarLivro(livro1);
+        pedido3.adicionarLivro(livro3);
+        pedido3.adicionarLivro(ebook1);
+        pedido3.adicionarLivro(ebook3);
+        pedido3.adicionarLivro(livro);
+        pedido3.adicionarLivro(ebook);
 
         //Fim do uso do Scanner
         scanner.close();
