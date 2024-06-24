@@ -23,18 +23,18 @@ public class Main {
 
 
         Autor autorTeste = new Autor(nomeAutor, emailAutor, instituicaoAutor);
-        Autor autor = new Autor("Colleen Hoover", "Coolen@email.com", instituicaoAutor);
-        Autor autor2 = new Autor("Agatha Christie", "Agatha.C@email.com", instituicaoAutor);
-        Autor autor3 = new Autor("Dan Brown", "D.Brown@email.com", instituicaoAutor);
-        Autor autor4 = new Autor("Stephen King", "SKWriter@email.com", instituicaoAutor);
-        Autor autor5 = new Autor("John Green", "John_green@email.com", instituicaoAutor);
-        Autor autor6 = new Autor("Ali Hazelwood", "Hazel.Ali@email.com", instituicaoAutor);
-        Autor autor7 = new Autor("Emily Henry", "H.Emily@email.com", instituicaoAutor);
-        Autor autor8 = new Autor("Julia Quinn", "Juju.Quinn@email.com", instituicaoAutor);
-        Autor autor9 = new Autor("Kiera Cass", "K.Kiera@email.com", instituicaoAutor);
-        Autor autor10 = new Autor("Matt Haig", "Haig_M@email.com", instituicaoAutor);
-        Autor autor11 = new Autor("Daniel Kahneman", "Kah_Dan@email.com", instituicaoAutor);
-        Autor autor12 = new Autor("Rachel Renée Russell", "RachelRR@email.com", instituicaoAutor);
+        Autor autor = new Autor("Colleen Hoover", "Coolen@email.com", "Instituicao Autor 1");
+        Autor autor2 = new Autor("Agatha Christie", "Agatha.C@email.com", "Instituicao Autor 2");
+        Autor autor3 = new Autor("Dan Brown", "D.Brown@email.com", "Instituicao Autor 3");
+        Autor autor4 = new Autor("Stephen King", "SKWriter@email.com", "Instituicao Autor 4");
+        Autor autor5 = new Autor("John Green", "John_green@email.com", "Instituicao Autor 5");
+        Autor autor6 = new Autor("Ali Hazelwood", "Hazel.Ali@email.com", "Instituicao Autor 6");
+        Autor autor7 = new Autor("Emily Henry", "H.Emily@email.com", "Instituicao Autor 7");
+        Autor autor8 = new Autor("Julia Quinn", "Juju.Quinn@email.com", "Instituicao Autor 8");
+        Autor autor9 = new Autor("Kiera Cass", "K.Kiera@email.com", "Instituicao Autor 9");
+        Autor autor10 = new Autor("Matt Haig", "Haig_M@email.com", "Instituicao Autor 10");
+        Autor autor11 = new Autor("Daniel Kahneman", "Kah_Dan@email.com", "Instituicao Autor 11");
+        Autor autor12 = new Autor("Rachel Renée Russell", "RachelRR@email.com", "Instituicao Autor 12");
         
         //leitura do livro fisico
         System.out.println("Digite o título do livro:");
